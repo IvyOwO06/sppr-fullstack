@@ -2,10 +2,10 @@
 import { ref } from 'vue'
 
 const name = ref('Ivy')
-const message = ref('Welcome to my Vue website!')
+const count = ref(0)
 
-function changeMessage() {
-  message.value = 'You clicker the button!'
+function increaseCount() {
+  count.value++
 }
 </script>
 
@@ -13,11 +13,11 @@ function changeMessage() {
   <main>
     <h1>My Vue Website</h1>
 
-    <p>{{ message }}</p>
-
     <p>Hello, {{ name }}!</p>
 
-    <button @click="changeMessage">Click me</button>
+    <p>Button clicked: {{ count }} times</p>
+
+    <button @click="increaseCount">Click me</button>
   </main>
 </template>
 
