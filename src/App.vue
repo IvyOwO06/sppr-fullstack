@@ -2,7 +2,6 @@
 import Header from './components/Header.vue'
 import CounterCard from './components/CounterCard.vue'
 import CharacterCard from './components/CharacterCard.vue'
-
 import { ref } from 'vue'
 
 const message = ref('Choose a character to interact with!')

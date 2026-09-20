@@ -1,5 +1,5 @@
 <script setup>
-defineProps({
+const props = defineProps({
   name: String,
   hp: Number,
 })
@@ -7,14 +7,13 @@ defineProps({
 const emit = defineEmits(['interact'])
 
 function interact() {
-  emit('interact', name)
+  emit('interact', props.name)
 }
 </script>
 
 <template>
   <div class="character-card">
     <h2>{{ name }}</h2>
-
     <p>HP: {{ hp }}</p>
 
     <button @click="interact">Interact</button>
