@@ -1,7 +1,9 @@
 <script setup>
 const props = defineProps({
   name: String,
-  hp: Number,
+  status: String,
+  species: String,
+  image: String,
 })
 
 const emit = defineEmits(['interact'])
@@ -13,8 +15,12 @@ function interact() {
 
 <template>
   <div class="character-card">
+    <img :src="image" :alt="name" class="character-image" />
+
     <h2>{{ name }}</h2>
-    <p>HP: {{ hp }}</p>
+
+    <p>Status: {{ status }}</p>
+    <p>Species: {{ species }}</p>
 
     <button @click="interact">Interact</button>
   </div>
@@ -22,27 +28,39 @@ function interact() {
 
 <style scoped>
 .character-card {
-  border: 2px solid white;
   padding: 20px;
-  background-color: black;
-  color: white;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
   text-align: center;
 }
 
+.character-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
 .character-card h2 {
-  margin-top: 0;
+  margin: 15px 0 10px;
+}
+
+.character-card p {
+  margin: 5px 0;
 }
 
 button {
-  background-color: black;
-  color: white;
-  border: 2px solid white;
+  margin-top: 15px;
   padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #333;
+  color: white;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: white;
-  color: black;
+  background-color: #555;
 }
 </style>
