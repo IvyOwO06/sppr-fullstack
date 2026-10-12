@@ -9,6 +9,7 @@ import Header from './components/Header.vue'
     <RouterLink to="/">Home</RouterLink>
     <RouterLink to="/characters">Characters</RouterLink>
     <RouterLink to="/about">About</RouterLink>
+    <RouterLink to="/favourites">Favourites</RouterLink>
   </nav>
 
   <RouterView />
